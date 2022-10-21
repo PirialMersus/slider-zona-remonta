@@ -6,7 +6,7 @@ const pDistance = 200;
 const appearanceDelay = 700;
 
 const changeSlider = () => {
-  let progress = $(".swiper-progress-bar .progress");
+  let progress = jQuery(".swiper-progress-bar .progress");
   progress.stop().parent().addClass("stopped");
 
   if (
@@ -30,11 +30,11 @@ const changeSlider = () => {
   }
 };
 const appearH1 = (activeIndex) => {
-  $(`.main-slider-content .h1slide${activeIndex}`).addClass("active");
+  jQuery(`.main-slider-content .h1slide${activeIndex}`).addClass("active");
 };
 
 const desappearH1 = () => {
-  $(`.titleH1`).removeClass("active");
+  jQuery(`.titleH1`).removeClass("active");
 };
 const appearP = (activeIndex) => {
   anime({
@@ -163,7 +163,7 @@ const widthParts = 100 / slidersCount;
 function initProgressBar() {
   let calcProgress = (slidersCount - 1) * (autoPlayDelay + swiper.params.speed);
   calcProgress += autoPlayDelay;
-  $(".swiper-progress-bar .progress").animate(
+  jQuery(".swiper-progress-bar .progress").animate(
     {
       width: "100%",
     },

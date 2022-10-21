@@ -41,8 +41,15 @@ body {
 }
 
 .mock-header {
-  background-color: rgb(119, 90, 90);
+  background-color: rgb(39, 38, 38);
   height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mock-header h2 {
+  color: #ffd60a;
+  font-size: 52px;
 }
 
 .main-slider {
