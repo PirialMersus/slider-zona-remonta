@@ -16,141 +16,130 @@
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="scss/main.css" />
-    <title>Document</title>
+    <title>Slider</title>
   </head>
   <body>
-    <div class="mockHeader"></div>
-
-    <div class="sliderContainer" id="slider">
-      <div class="main-slider">
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="transparentPartOfSlide"></div>
-              <div class="slideContentWrap">
-                <div class="mainSliderContent">
-                  <h1 class="main-slider__simple-title h1slide0">
-                    ремонт під ключ
-                  </h1>
-                  <p class="subTitle pSlide0">
-                    Послуга «Ремонт під ключ» — оптимальне рішення, якщо ви
-                    купили квартиру в новобудові без оздоблення.
-                  </p>
-                  <a href="https://www.atlanta.ua/"
-                    ><div class="more link0">
-                      <span>Детальніше</span
-                      ><img src="./img/icons/arrowMore.png" alt="" /></div
-                  ></a>
-                </div>
-                <!--                <img-->
-                <!--                  class="mainSliderImage"-->
-                <!--                  src="./img/slider_image1.png"-->
-                <!--                  alt="home"-->
-                <!--                />-->
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="transparentPartOfSlide"></div>
-              <div class="slideContentWrap">
-                <div class="mainSliderContent">
-                  <h1 class="main-slider__simple-title h1slide1">
-                    Комплексный ремонт квартир
-                  </h1>
-                  <p class="subTitle pSlide1">
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
-                    do amet sint. Velit officia consequat duis enim velit
-                    mollit. Exercitation veniam consequat sunt nostrud amet
-                  </p>
-                </div>
-                <img
-                  class="mainSliderImage"
-                  src="https://html.nkdev.info/piroll/assets/images/home-6-2.jpg"
-                  alt="home"
-                />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="transparentPartOfSlide"></div>
-              <div class="slideContentWrap">
-                <div class="mainSliderContent">
-                  <h1 data-slide="2" class="main-slider__simple-title h1slide2">
-                    от идеи до полной реализации
-                  </h1>
-                  <p data-slide="2" class="subTitle pSlide2">
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
-                    do amet sint. Velit officia consequat duis enim velit
-                  </p>
-                </div>
-                <img
-                  class="mainSliderImage"
-                  src="https://html.nkdev.info/piroll/assets/images/home-6-3.jpg"
-                  alt="home"
-                />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="transparentPartOfSlide"></div>
-              <div class="slideContentWrap">
-                <div class="mainSliderContent">
-                  <h1 class="main-slider__simple-title h1slide3">
-                    квартир от идеи до полной
-                  </h1>
-                  <p class="subTitle pSlide3">
-                    do amet sint. Velit officia consequat duis enim velit
-                    mollit. Exercitation veniam consequat sunt nostrud amet
-                  </p>
-                </div>
-                <img
-                  class="mainSliderImage"
-                  src="https://html.nkdev.info/piroll/assets/images/home-6-4.jpg"
-                  alt="home"
-                />
+    <div class="mock-header"></div>
+    <div class="main-slider">
+      <div class="swiper-container">
+        <div class="background">
+          <img src="./img/background.png" alt="background" />
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="transparent-part-of-slide"></div>
+            <div class="slide-content-wrap">
+              <div class="main-slider-content">
+                <h1 class="titleH1 h1slide0">ремонт під ключ</h1>
+                <p class="pSlide0">
+                  Послуга «Ремонт під ключ» — оптимальне рішення, якщо ви купили
+                  квартиру в новобудові без оздоблення.
+                </p>
+                <a href="https://www.atlanta.ua/"
+                  ><div class="more link0">
+                    <span>Детальніше</span
+                    ><img src="./img/icons/arrowMore.png" alt="" /></div
+                ></a>
               </div>
             </div>
           </div>
-        </div>
-        <div class="mainSliderPaginationBlock">
-          <div class="swiper-button">
-            <div class="swiper-button-prev">
-              <svg
-                width="9"
-                height="18"
-                viewBox="0 0 9 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.999805 9.00004C1.00642 9.12467 0.925497 8.90664 0.999805 9.00004L6.9998 17C7.08677 17.1157 6.86488 16.9893 6.9998 17C7.13472 17.0108 7.89903 17.1006 7.9998 17C8.10058 16.8994 7.99458 16.1507 7.9998 16C8.00515 15.8492 8.09315 16.1091 7.9998 16L1.9998 9.00004L7.99981 2.00004C8.09315 1.89095 8.00515 2.15086 7.99981 2.00004C7.99458 1.84936 8.10058 1.1007 7.99981 1.00004C7.89903 0.899503 7.13471 0.989287 6.99981 1.00004C6.86489 1.01079 7.08677 0.884346 6.99981 1.00004L0.999805 9.00004C0.991096 8.85143 0.911215 9.11133 0.999805 9.00004Z"
-                  fill="#E8E8E8"
-                />
-              </svg>
-            </div>
-            <div class="paginationNumbersPlusProgressBar">
-              <div class="swiper-pagination"></div>
-              <div class="swiper-progress-bar">
-                <div class="progress"></div>
-                <div class="progress-sections"></div>
+          <div class="swiper-slide">
+            <div class="transparent-part-of-slide"></div>
+            <div class="slide-content-wrap">
+              <div class="main-slider-content">
+                <h1 class="titleH1 h1slide1">Комплексный ремонт квартир</h1>
+                <p class="pSlide1">
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                </p>
               </div>
+              <img
+                class="main-slider-image"
+                src="https://html.nkdev.info/piroll/assets/images/home-6-2.jpg"
+                alt="home"
+              />
             </div>
-
-            <div class="swiper-button-next">
-              <svg
-                width="9"
-                height="18"
-                viewBox="0 0 9 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.00019 8.99996C7.99358 8.87532 8.0745 9.09336 8.00019 8.99996L2.00019 0.99996C1.91323 0.884262 2.13512 1.01071 2.00019 0.99996C1.86528 0.989206 1.10096 0.89942 1.00019 0.99996C0.899415 1.10063 1.00542 1.8493 1.00019 1.99996C0.994853 2.15077 0.906846 1.89086 1.00019 1.99996L7.00019 8.99996L1.00019 16C0.906847 16.1091 0.994854 15.8491 1.00019 16C1.00542 16.1506 0.899416 16.8993 1.00019 17C1.10097 17.1005 1.86529 17.0107 2.00019 17C2.13511 16.9892 1.91323 17.1157 2.00019 17L8.00019 8.99996C8.0089 9.14857 8.08878 8.88867 8.00019 8.99996Z"
-                  fill="#A3A3A3"
-                />
-              </svg>
+          </div>
+          <div class="swiper-slide">
+            <div class="transparent-part-of-slide"></div>
+            <div class="slide-content-wrap">
+              <div class="main-slider-content">
+                <h1 data-slide="2" class="titleH1 h1slide2">
+                  от идеи до полной реализации
+                </h1>
+                <p data-slide="2" class="pSlide2">
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit
+                </p>
+              </div>
+              <img
+                class="main-slider-image"
+                src="https://html.nkdev.info/piroll/assets/images/home-6-3.jpg"
+                alt="home"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="transparent-part-of-slide"></div>
+            <div class="slide-content-wrap">
+              <div class="main-slider-content">
+                <h1 class="titleH1 h1slide3">квартир от идеи до полной</h1>
+                <p class="pSlide3">
+                  do amet sint. Velit officia consequat duis enim velit mollit.
+                  Exercitation veniam consequat sunt nostrud amet
+                </p>
+              </div>
+              <img
+                class="main-slider-image"
+                src="https://html.nkdev.info/piroll/assets/images/home-6-4.jpg"
+                alt="home"
+              />
             </div>
           </div>
         </div>
       </div>
+      <div class="main-slider-pagination-block">
+        <div class="swiper-button">
+          <div class="swiper-button-prev">
+            <svg
+              width="9"
+              height="18"
+              viewBox="0 0 9 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.999805 9.00004C1.00642 9.12467 0.925497 8.90664 0.999805 9.00004L6.9998 17C7.08677 17.1157 6.86488 16.9893 6.9998 17C7.13472 17.0108 7.89903 17.1006 7.9998 17C8.10058 16.8994 7.99458 16.1507 7.9998 16C8.00515 15.8492 8.09315 16.1091 7.9998 16L1.9998 9.00004L7.99981 2.00004C8.09315 1.89095 8.00515 2.15086 7.99981 2.00004C7.99458 1.84936 8.10058 1.1007 7.99981 1.00004C7.89903 0.899503 7.13471 0.989287 6.99981 1.00004C6.86489 1.01079 7.08677 0.884346 6.99981 1.00004L0.999805 9.00004C0.991096 8.85143 0.911215 9.11133 0.999805 9.00004Z"
+                fill="#E8E8E8"
+              />
+            </svg>
+          </div>
+          <div class="paginationNumbersPlusProgressBar">
+            <div class="swiper-pagination"></div>
+            <div class="swiper-progress-bar">
+              <div class="progress"></div>
+              <div class="progress-sections"></div>
+            </div>
+          </div>
+
+          <div class="swiper-button-next">
+            <svg
+              width="9"
+              height="18"
+              viewBox="0 0 9 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.00019 8.99996C7.99358 8.87532 8.0745 9.09336 8.00019 8.99996L2.00019 0.99996C1.91323 0.884262 2.13512 1.01071 2.00019 0.99996C1.86528 0.989206 1.10096 0.89942 1.00019 0.99996C0.899415 1.10063 1.00542 1.8493 1.00019 1.99996C0.994853 2.15077 0.906846 1.89086 1.00019 1.99996L7.00019 8.99996L1.00019 16C0.906847 16.1091 0.994854 15.8491 1.00019 16C1.00542 16.1506 0.899416 16.8993 1.00019 17C1.10097 17.1005 1.86529 17.0107 2.00019 17C2.13511 16.9892 1.91323 17.1157 2.00019 17L8.00019 8.99996C8.0089 9.14857 8.08878 8.88867 8.00019 8.99996Z"
+                fill="#A3A3A3"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
     </div>
+
     <script src="js/jquery-3.3.1.min.js"></script>
     <script
       type="text/javascript"

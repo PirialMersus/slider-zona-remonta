@@ -3,6 +3,7 @@ const autoPlayDelay = 2000;
 const animationDuration = 700;
 const h1yDistance = 200;
 const pDistance = 200;
+const appearanceDelay = 700;
 
 const changeSlider = () => {
   let progress = $(".swiper-progress-bar .progress");
@@ -13,7 +14,7 @@ const changeSlider = () => {
     !progress.parent().is(".stopped")
   ) {
     progress.css("width", "0");
-    if (this.activeIndex === 0) {
+    if (this.realIndex === 0) {
       initProgressBar();
     }
   }
@@ -21,7 +22,7 @@ const changeSlider = () => {
   if (progress.parent().is(".stopped")) {
     progress.animate(
       {
-        width: Math.round(widthParts * (swiper.activeIndex + 1)) + "%",
+        width: Math.round(widthParts * (swiper.realIndex + 1)) + "%",
       },
       autoPlayDelay,
       "linear"
@@ -29,43 +30,45 @@ const changeSlider = () => {
   }
 };
 const appearH1 = (activeIndex) => {
-  anime({
-    targets: `.mainSliderContent .h1slide${activeIndex}`,
-    translateY: [
-      { value: -h1yDistance, duration: 1 },
-      { value: 0, duration: animationDuration, delay: 1 },
-    ],
-    opacity: [
-      { value: 0, duration: 1 },
-      { value: 1, duration: animationDuration, delay: 1 },
-    ],
-    easing: "easeInOutQuad",
-    duration: animationDuration,
-    delay: 100,
-    // direction: "reverse",
-  });
+  $(`.main-slider-content .h1slide${activeIndex}`).addClass("active");
+  // anime({
+  //   targets: `.main-slider-content .h1slide${activeIndex}`,
+  //   translateY: [
+  //     { value: -h1yDistance, duration: 1 },
+  //     { value: 0, duration: animationDuration, delay: 1 },
+  //   ],
+  //   opacity: [
+  //     { value: 0, duration: 1 },
+  //     { value: 1, duration: animationDuration, delay: 1 },
+  //   ],
+  //   easing: "easeInOutQuad",
+  //   duration: animationDuration,
+  //   delay: 100,
+  //   // direction: "reverse",
+  // });
 };
 
 const desappearH1 = () => {
-  anime({
-    targets: `.mainSliderContent h1`,
-    translateY: -h1yDistance,
-    opacity: 0,
-    easing: "easeInOutQuad",
-    duration: animationDuration,
-    // direction: "reverse",
-  });
+  $(`.titleH1`).removeClass("active");
+  // anime({
+  //   targets: `.mainSliderContent h1`,
+  //   translateY: -h1yDistance,
+  //   opacity: 0,
+  //   easing: "easeInOutQuad",
+  //   duration: animationDuration,
+  //   // direction: "reverse",
+  // });
 };
 const appearP = (activeIndex) => {
   anime({
-    targets: `.mainSliderContent .pSlide${activeIndex}`,
+    targets: `.main-slider-content .pSlide${activeIndex}`,
     translateX: [
       { value: -pDistance, duration: 1 },
-      { value: 0, duration: animationDuration, delay: 1 },
+      { value: 0, duration: animationDuration, delay: appearanceDelay },
     ],
     opacity: [
       { value: 0, duration: 1 },
-      { value: 1, duration: animationDuration, delay: 1 },
+      { value: 1, duration: animationDuration, delay: appearanceDelay },
     ],
     easing: "easeInOutQuad",
     duration: animationDuration,
@@ -85,14 +88,14 @@ const desappearP = () => {
 };
 const appearLink = (activeIndex) => {
   anime({
-    targets: `.mainSliderContent .link${activeIndex}`,
+    targets: `.main-slider-content .link${activeIndex}`,
     translateY: [
       { value: h1yDistance, duration: 1 },
-      { value: 0, duration: animationDuration, delay: 1 },
+      { value: 0, duration: animationDuration, delay: appearanceDelay },
     ],
     opacity: [
       { value: 0, duration: 1 },
-      { value: 1, duration: animationDuration, delay: 1 },
+      { value: 1, duration: animationDuration, delay: appearanceDelay },
     ],
     easing: "easeInOutQuad",
     duration: animationDuration,
@@ -103,7 +106,7 @@ const appearLink = (activeIndex) => {
 
 const desappearLink = () => {
   anime({
-    targets: `.mainSliderContent div`,
+    targets: `.main-slider-content div`,
     translateY: h1yDistance,
     opacity: 0,
     easing: "easeInOutQuad",
@@ -116,8 +119,8 @@ const swiper = new Swiper(".main-slider .swiper-container", {
   direction: "vertical",
   // horizontal slider
   // direction: 'horizontal',
-  speed: 800,
-  // loop: true,
+  speed: animationDuration,
+  loop: true,
   grabCursor: true,
   mousewheelControl: true,
   watchSlidesProgress: true,
@@ -169,7 +172,7 @@ const swiper = new Swiper(".main-slider .swiper-container", {
         let innerOffset = swiper.height * interleaveOffset;
         let innerTranslate = slideProgress * innerOffset;
 
-        TweenMax.set(swiper.slides[i].querySelector(".slideContentWrap"), {
+        TweenMax.set(swiper.slides[i].querySelector(".slide-content-wrap"), {
           y: innerTranslate,
           // horizontal slider
           // x: innerTranslate,
@@ -180,7 +183,7 @@ const swiper = new Swiper(".main-slider .swiper-container", {
       let swiper = this;
       for (let i = 0; i < swiper.slides.length; i++) {
         swiper.slides[i].style.transition = speed + "ms";
-        swiper.slides[i].querySelector(".slideContentWrap").style.transition =
+        swiper.slides[i].querySelector(".slide-content-wrap").style.transition =
           speed + "ms";
       }
     },
@@ -209,10 +212,9 @@ swiper.on("slideChange", function () {
   desappearP();
   desappearH1();
   desappearLink();
-
-  appearP(this.activeIndex);
-  appearH1(this.activeIndex);
-  appearLink(this.activeIndex);
+  appearP(this.realIndex);
+  appearH1(this.realIndex);
+  appearLink(this.realIndex);
 
   changeSlider();
 });
