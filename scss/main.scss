@@ -1,0 +1,374 @@
+@font-face {
+  font-family: Ruberoid;
+  src: url("/fonts/ruberoid/Ruberoid-Medium.woff");
+}
+@font-face {
+  font-family: Ruberoid;
+  src: url("/fonts/ruberoid/Ruberoid-Bold.woff");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Ruberoid;
+  src: url("/fonts/ruberoid/Ruberoid-Light.woff");
+  font-weight: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+a,
+div,
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #000000;
+  font-weight: 400;
+  // list-style     : none;
+  text-decoration: none;
+  box-shadow: none;
+  border: none;
+}
+html,
+body {
+  font-family: Ruberoid, serif;
+  padding: 0;
+  margin: 0;
+}
+
+$desktop: 1440px;
+$tablet: 780px;
+$mobile: 420px;
+$primary-c: #e8e8e8;
+$secondary-c: #a3a3a3;
+
+// CODE
+.mockHeader {
+  background-color: #000;
+  height: 104px;
+}
+
+.main-slider {
+  position: relative;
+  width: 100%;
+  background-color: #868383;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url(../img/slider_image1.png);
+
+  .mainSliderImage {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: inherit;
+    object-fit: cover;
+    margin: auto;
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: calc(100vh - 104px);
+    position: relative;
+    overflow: hidden;
+    .swiper-slide {
+      background-color: transparent;
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+      text-align: center;
+      font-size: 1.8rem;
+      display: flex;
+
+      .transparentPartOfSlide {
+        width: 33.4%;
+        @media screen and (max-width: $mobile) {
+          width: 0%;
+        }
+      }
+      .slideContentWrap {
+        height: 100%;
+        top: 0;
+        display: flex;
+        align-items: center;
+        right: 0;
+        width: 66.6%;
+        background: no-repeat center
+            linear-gradient(rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.64)),
+          url("/img/slider_image1.png");
+        background-size: cover;
+        @media screen and (max-width: $mobile) {
+          width: 100%;
+        }
+        .mainSliderContent {
+          width: 70%;
+          text-align: left;
+          position: relative;
+          z-index: 2;
+          top: 0px;
+          left: -30%;
+          user-select: none;
+          @media screen and (max-width: $desktop) {
+            left: -40%;
+          }
+          @media screen and (max-width: $tablet) {
+            left: -45%;
+          }
+          @media screen and (max-width: $mobile) {
+            left: 16px;
+          }
+          .main-slider__simple-title {
+            color: #ffd60a;
+            font-size: 54px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            font-weight: 400;
+            @media screen and (max-width: $mobile) {
+              font-size: 32px;
+            }
+          }
+          p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 154%;
+            color: #ffffff;
+            margin-bottom: 46px;
+          }
+          .more {
+            display: flex;
+            align-items: center;
+            span {
+              font-weight: 400;
+              font-size: 20px;
+              text-transform: uppercase;
+              color: #ffffff;
+              margin-right: 16px;
+            }
+          }
+        }
+      }
+
+      .slider {
+        min-height: 50vh;
+      }
+    }
+  }
+
+  // .swiper-scrollbar {
+  //   height: 1px;
+  //   width: 100%;
+  //   position: absolute;
+  //   position: relative;
+  //   // bottom: 7rem;
+  //   z-index: 100;
+  //   background: #505050;
+  //   // padding: 1rem 0;
+  //   border-radius: 0;
+
+  //   @media screen and (max-width: $large_mobile) {
+  //     // bottom: 9rem;
+  //   }
+
+  //   &-drag {
+  //     background: $primary-c;
+  //     height: 2px;
+  //   }
+  // }
+  .mainSliderPaginationBlock {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 33.3%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: $tablet) {
+      width: auto;
+    }
+    @media screen and (max-width: $mobile) {
+      left: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .swiper-button {
+      display: flex;
+      // flex-direction: column;
+      z-index: 5;
+      // pointer-events: auto;
+      position: relative;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      transform: translate(0);
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      // max-width: $large_mobile;
+      width: 100%;
+      margin: 2rem auto;
+      // padding: 0 30px;
+      @media screen and (max-width: $tablet) {
+        right: auto;
+      }
+      .paginationNumbersPlusProgressBar {
+        position: relative;
+        max-width: 100%;
+        margin: 0 1rem;
+        .swiper-pagination {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+
+          &-bullets {
+            left: 0;
+            top: -10px;
+            transform: translate(0);
+          }
+
+          &-bullet {
+            background: none;
+            font-weight: 500;
+            line-height: 140%;
+            color: $secondary-c;
+            margin-right: 2rem;
+            display: block;
+            opacity: 1;
+            transition: all 1s;
+            width: auto;
+            height: auto;
+            margin-bottom: 0;
+            font-size: 1.3rem;
+
+            &-active,
+            &:hover {
+              color: $primary-c;
+              transform: scale(1.2);
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+        .swiper-progress-bar {
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background: $secondary-c;
+          .progress {
+            height: inherit;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            background: $primary-c;
+            z-index: 1;
+          }
+          .progress-sections {
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            height: inherit;
+            width: inherit;
+            z-index: 2;
+            display: flex;
+            flex-direction: row;
+            span {
+              flex: 1;
+              height: inherit;
+              border-right: 2px solid #eee;
+              &:last-child {
+                border-right-width: 0;
+              }
+            }
+          }
+        }
+      }
+
+      &-prev {
+        left: 30px;
+        // transform: rotate(-90deg);
+      }
+      &-next {
+        right: 30px;
+        // transform: rotate(-90deg);
+      }
+      @media screen and (max-width: $desktop) {
+        right: 40px;
+      }
+
+      // @media screen and (max-width: $large_tablet) {
+      //   position: relative;
+      //   bottom: auto;
+      //   top: auto;
+      //   right: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   transform: translate(0);
+      //   flex-direction: row;
+      //   align-items: center;
+      //   justify-content: space-between;
+      //   max-width: $large_mobile;
+      //   width: 100%;
+      //   margin: 2rem auto;
+      //   padding: 0px 20px;
+      // }
+
+      @media screen and (max-width: $mobile) {
+        // bottom: 5rem;
+      }
+
+      &-prev {
+        left: 0;
+
+        // @media screen and (max-width: $large_tablet) {
+        //   transform: rotate(-90deg);
+        // }
+      }
+
+      &-next {
+        right: 0;
+
+        // @media screen and (max-width: $large_tablet) {
+        //   transform: rotate(-90deg);
+        // }
+      }
+
+      &-prev,
+      &-next {
+        position: relative;
+        top: 0;
+        margin-top: 0;
+        height: auto;
+
+        &:hover {
+          svg {
+            stroke: $primary-c;
+          }
+        }
+
+        svg {
+          width: 1.2rem;
+          stroke: $secondary-c;
+          transition: stroke 0.5s;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,312 @@
+@font-face {
+  font-family: Ruberoid;
+  src: url("/fonts/ruberoid/Ruberoid-Medium.woff");
+}
+@font-face {
+  font-family: Ruberoid;
+  src: url("/fonts/ruberoid/Ruberoid-Bold.woff");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Ruberoid;
+  src: url("/fonts/ruberoid/Ruberoid-Light.woff");
+  font-weight: 1;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+a,
+div,
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #000000;
+  font-weight: 400;
+  text-decoration: none;
+  box-shadow: none;
+  border: none;
+}
+
+html,
+body {
+  font-family: Ruberoid, serif;
+  padding: 0;
+  margin: 0;
+}
+
+.mockHeader {
+  background-color: #000;
+  height: 104px;
+}
+
+.main-slider {
+  position: relative;
+  width: 100%;
+  background-color: #868383;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url(../img/slider_image1.png);
+}
+.main-slider .mainSliderImage {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: auto;
+}
+.main-slider .swiper-container {
+  width: 100%;
+  height: calc(100vh - 104px);
+  position: relative;
+  overflow: hidden;
+}
+.main-slider .swiper-container .swiper-slide {
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  text-align: center;
+  font-size: 1.8rem;
+  display: flex;
+}
+.main-slider .swiper-container .swiper-slide .transparentPartOfSlide {
+  width: 33.4%;
+}
+@media screen and (max-width: 420px) {
+  .main-slider .swiper-container .swiper-slide .transparentPartOfSlide {
+    width: 0%;
+  }
+}
+.main-slider .swiper-container .swiper-slide .slideContentWrap {
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  right: 0;
+  width: 66.6%;
+  background: no-repeat center linear-gradient(rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.64)), url("/img/slider_image1.png");
+  background-size: cover;
+}
+@media screen and (max-width: 420px) {
+  .main-slider .swiper-container .swiper-slide .slideContentWrap {
+    width: 100%;
+  }
+}
+.main-slider .swiper-container .swiper-slide .slideContentWrap .mainSliderContent {
+  width: 70%;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+  top: 0px;
+  left: -30%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+@media screen and (max-width: 1440px) {
+  .main-slider .swiper-container .swiper-slide .slideContentWrap .mainSliderContent {
+    left: -40%;
+  }
+}
+@media screen and (max-width: 780px) {
+  .main-slider .swiper-container .swiper-slide .slideContentWrap .mainSliderContent {
+    left: -45%;
+  }
+}
+@media screen and (max-width: 420px) {
+  .main-slider .swiper-container .swiper-slide .slideContentWrap .mainSliderContent {
+    left: 16px;
+  }
+}
+.main-slider .swiper-container .swiper-slide .slideContentWrap .mainSliderContent .main-slider__simple-title {
+  color: #ffd60a;
+  font-size: 54px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+@media screen and (max-width: 420px) {
+  .main-slider .swiper-container .swiper-slide .slideContentWrap .mainSliderContent .main-slider__simple-title {
+    font-size: 32px;
+  }
+}
+.main-slider .swiper-container .swiper-slide .slideContentWrap .mainSliderContent p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 154%;
+  color: #ffffff;
+  margin-bottom: 46px;
+}
+.main-slider .swiper-container .swiper-slide .slideContentWrap .mainSliderContent .more {
+  display: flex;
+  align-items: center;
+}
+.main-slider .swiper-container .swiper-slide .slideContentWrap .mainSliderContent .more span {
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-right: 16px;
+}
+.main-slider .swiper-container .swiper-slide .slider {
+  min-height: 50vh;
+}
+.main-slider .mainSliderPaginationBlock {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  width: 33.3%;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 780px) {
+  .main-slider .mainSliderPaginationBlock {
+    width: auto;
+  }
+}
+@media screen and (max-width: 420px) {
+  .main-slider .mainSliderPaginationBlock {
+    left: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.main-slider .mainSliderPaginationBlock .swiper-button {
+  display: flex;
+  z-index: 5;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transform: translate(0);
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 2rem auto;
+}
+@media screen and (max-width: 780px) {
+  .main-slider .mainSliderPaginationBlock .swiper-button {
+    right: auto;
+  }
+}
+.main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar {
+  position: relative;
+  max-width: 100%;
+  margin: 0 1rem;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar .swiper-pagination {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar .swiper-pagination-bullets {
+  left: 0;
+  top: -10px;
+  transform: translate(0);
+}
+.main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar .swiper-pagination-bullet {
+  background: none;
+  font-weight: 500;
+  line-height: 140%;
+  color: #a3a3a3;
+  margin-right: 2rem;
+  display: block;
+  opacity: 1;
+  transition: all 1s;
+  width: auto;
+  height: auto;
+  margin-bottom: 0;
+  font-size: 1.3rem;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar .swiper-pagination-bullet-active, .main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar .swiper-pagination-bullet:hover {
+  color: #e8e8e8;
+  transform: scale(1.2);
+}
+.main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar .swiper-pagination-bullet:last-child {
+  margin-right: 0;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar .swiper-progress-bar {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #a3a3a3;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar .swiper-progress-bar .progress {
+  height: inherit;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  background: #e8e8e8;
+  z-index: 1;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar .swiper-progress-bar .progress-sections {
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar .swiper-progress-bar .progress-sections span {
+  flex: 1;
+  height: inherit;
+  border-right: 2px solid #eee;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button .paginationNumbersPlusProgressBar .swiper-progress-bar .progress-sections span:last-child {
+  border-right-width: 0;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button-prev {
+  left: 30px;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button-next {
+  right: 30px;
+}
+@media screen and (max-width: 1440px) {
+  .main-slider .mainSliderPaginationBlock .swiper-button {
+    right: 40px;
+  }
+}
+.main-slider .mainSliderPaginationBlock .swiper-button-prev {
+  left: 0;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button-next {
+  right: 0;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button-prev, .main-slider .mainSliderPaginationBlock .swiper-button-next {
+  position: relative;
+  top: 0;
+  margin-top: 0;
+  height: auto;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button-prev:hover svg, .main-slider .mainSliderPaginationBlock .swiper-button-next:hover svg {
+  stroke: #e8e8e8;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button-prev svg, .main-slider .mainSliderPaginationBlock .swiper-button-next svg {
+  width: 1.2rem;
+  stroke: #a3a3a3;
+  transition: stroke 0.5s;
+}
+.main-slider .mainSliderPaginationBlock .swiper-button-prev::after, .main-slider .mainSliderPaginationBlock .swiper-button-next::after {
+  display: none;
+}/*# sourceMappingURL=main.css.map */
