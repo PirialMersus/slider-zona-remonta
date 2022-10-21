@@ -31,33 +31,10 @@ const changeSlider = () => {
 };
 const appearH1 = (activeIndex) => {
   $(`.main-slider-content .h1slide${activeIndex}`).addClass("active");
-  // anime({
-  //   targets: `.main-slider-content .h1slide${activeIndex}`,
-  //   translateY: [
-  //     { value: -h1yDistance, duration: 1 },
-  //     { value: 0, duration: animationDuration, delay: 1 },
-  //   ],
-  //   opacity: [
-  //     { value: 0, duration: 1 },
-  //     { value: 1, duration: animationDuration, delay: 1 },
-  //   ],
-  //   easing: "easeInOutQuad",
-  //   duration: animationDuration,
-  //   delay: 100,
-  //   // direction: "reverse",
-  // });
 };
 
 const desappearH1 = () => {
   $(`.titleH1`).removeClass("active");
-  // anime({
-  //   targets: `.mainSliderContent h1`,
-  //   translateY: -h1yDistance,
-  //   opacity: 0,
-  //   easing: "easeInOutQuad",
-  //   duration: animationDuration,
-  //   // direction: "reverse",
-  // });
 };
 const appearP = (activeIndex) => {
   anime({
@@ -111,35 +88,25 @@ const desappearLink = () => {
     opacity: 0,
     easing: "easeInOutQuad",
     duration: animationDuration,
-    // direction: "reverse",
   });
 };
 
 const swiper = new Swiper(".main-slider .swiper-container", {
   direction: "vertical",
-  // horizontal slider
-  // direction: 'horizontal',
   speed: animationDuration,
   loop: true,
   grabCursor: true,
-  mousewheelControl: true,
+  preventInteractionOnTransition: true,
   watchSlidesProgress: true,
   autoplay: {
     delay: autoPlayDelay,
     disableOnInteraction: false,
   },
 
-  // mousewheel: {
-  // releaseOnEdges: true,
-  // },
   navigation: {
     nextEl: ".main-slider .swiper-button-next",
     prevEl: ".main-slider .swiper-button-prev",
   },
-  //   effect: "fade",
-  //   fadeEffect: {
-  //     crossFade: true,
-  //   },
   scrollbar: {
     el: ".main-slider .swiper-scrollbar",
     draggable: true,
@@ -173,9 +140,7 @@ const swiper = new Swiper(".main-slider .swiper-container", {
         let innerTranslate = slideProgress * innerOffset;
 
         TweenMax.set(swiper.slides[i].querySelector(".slide-content-wrap"), {
-          y: innerTranslate,
-          // horizontal slider
-          // x: innerTranslate,
+          y: innerTranslate * 0.9,
         });
       }
     },
@@ -215,33 +180,9 @@ swiper.on("slideChange", function () {
   appearP(this.realIndex);
   appearH1(this.realIndex);
   appearLink(this.realIndex);
-
   changeSlider();
 });
 
 swiper.on("touchMove", function () {
   changeSlider();
 });
-
-swiper.on("reachEnd", function () {
-  setTimeout(function () {
-    swiper.mousewheel.disable();
-  }, 500);
-});
-function wheel(event) {
-  let delta = 0;
-  if (!event) event = window.event;
-  if (event.wheelDelta) {
-    delta = event.wheelDelta / 120;
-  } else if (event.detail) {
-    delta = -event.detail / 3;
-  }
-  if (delta) {
-    if (delta > 0) {
-      swiper.mousewheel.enable();
-    }
-  }
-}
-
-window.addEventListener("mousewheel", wheel);
-window.addEventListener("DOMMouseScroll", wheel);

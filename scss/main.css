@@ -145,6 +145,7 @@ body {
   margin-bottom: 32px;
   font-weight: 400;
   background-position: -500%;
+  opacity: 0;
 }
 @media screen and (max-width: 420px) {
   .main-slider .swiper-container .swiper-slide .slide-content-wrap .main-slider-content .titleH1 {
@@ -161,6 +162,7 @@ body {
           animation: animate 0.8s linear;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  opacity: 1;
 }
 .main-slider .swiper-container .swiper-slide .slide-content-wrap .main-slider-content p {
   font-weight: 400;
@@ -168,6 +170,7 @@ body {
   line-height: 154%;
   color: #ffffff;
   margin-bottom: 46px;
+  opacity: 0;
 }
 .main-slider .swiper-container .swiper-slide .slide-content-wrap .main-slider-content .more {
   display: flex;

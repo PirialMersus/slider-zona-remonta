@@ -29,7 +29,6 @@ p {
   font-size: 14px;
   color: #000000;
   font-weight: 400;
-  // list-style     : none;
   text-decoration: none;
   box-shadow: none;
   border: none;
@@ -47,35 +46,17 @@ $mobile: 420px;
 $primary-c: #e8e8e8;
 $secondary-c: #a3a3a3;
 $gold: #ffd60a;
+$transitionDelay: 800;
 
-// CODE
 .mock-header {
   background-color: rgb(119, 90, 90);
   height: 104px;
-  // h2 {
-  //   position: relative;
-  //   font-family: sans-serif;
-  //   text-transform: uppercase;
-  //   font-size: 2em;
-  //   letter-spacing: 4px;
-  //   overflow: hidden;
-  //   background: linear-gradient(90deg, $gold, $gold, $gold);
-  //   background-repeat: no-repeat;
-  //   background-size: 80%;
-  //   animation: animate 0.8s linear;
-  //   -webkit-background-clip: text;
-  //   -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  // }
 }
 
 .main-slider {
   position: relative;
   width: 100%;
   background-color: #1a1a1a;
-  // background-repeat: no-repeat;
-  // background-position: center center;
-  // background-size: cover;
-  // background-image: url(../img/slider_image1.png);
 
   .main-slider-image {
     position: absolute;
@@ -162,6 +143,7 @@ $gold: #ffd60a;
             @media screen and (max-width: $mobile) {
               font-size: 32px;
             }
+            opacity: 0;
             &.active {
               position: relative;
               overflow: hidden;
@@ -171,6 +153,7 @@ $gold: #ffd60a;
               animation: animate 0.8s linear;
               -webkit-background-clip: text;
               -webkit-text-fill-color: rgba(255, 255, 255, 0);
+              opacity: 1;
             }
           }
 
@@ -180,6 +163,7 @@ $gold: #ffd60a;
             line-height: 154%;
             color: #ffffff;
             margin-bottom: 46px;
+            opacity: 0;
           }
           .more {
             display: flex;
